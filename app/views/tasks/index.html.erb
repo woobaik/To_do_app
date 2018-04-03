@@ -6,6 +6,9 @@
       <li>
         <h3><strong><%= task.title %></strong></h3>
         <p><em><%= task.description %></em></p>
+        <%= link_to 'Edit', edit_task_path(task.id) %>
+        <%= link_to 'Delete', task, method: :delete %>
+        <%= link_to 'Show', task_path(task) %>
       </li>
 
 
