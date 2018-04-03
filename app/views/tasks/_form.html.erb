@@ -5,6 +5,11 @@
   <%= f.label :description %><br>
   <%= f.text_area :description %><br>
 
+  <% if request.path.include?('edit')  %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed%><br>
+  <% end %>
+
   <%= f.submit %>
 
 <% end %>
