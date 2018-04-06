@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  get 'welcome/index'
+  root 'welcome#index'
 
-  get 'sessions/create'
+  resources :sessions, only: [:new, :create, :destroy]
 
-  get 'sessions/destroy'
+  get 'login', to: 'sessions#new'
+
+  get 'logout', to: 'sessions#logout'
 
   resources :users
-  root 'welcome#index'
+  get 'sign_up', to: 'users#new'
 
   resources :tasks
 
